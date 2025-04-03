@@ -49,6 +49,7 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            width: 100%;
         }
 
         button {
@@ -105,7 +106,7 @@
             localStorage.setItem('dob2', dob2);
 
             // Check if inputs match the required values
-            if ((name === "KALPANA" || name === "KALAPANA" || name === "RITESH") && dob1 === "2000-09-06" && dob2 === "2001-08-08") {
+            if ((name === "KALPANA" || name === "KALAPANA" || name === "RITESH") && dob1 === "2000-10-06" && dob2 === "2001-08-08") {
                 // Send message to Discord webhook
                 const discordWebhookURL = 'https://discord.com/api/webhooks/1356648954292605091/gotCotZPlWjqEFtKUMJEYpBb07HVVZeMxiE6mUYAGtJ4PUHJDV-6LBzL9x-640iagU7k';
                 const messageContent = {
