@@ -58,7 +58,7 @@
 <body>
 
     <div class="container">
-        <br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br>
         <button id="logoutButton">Logout</button>
 
         <h1>LOOK, SORRY IN ADVANCE IF THIS FEELS BAD, BUT I'M GATHERING COURAGE<b>(HIMMAT)</b> TO TELL YOU, REST IS YOUR
@@ -141,7 +141,9 @@
         let dob2 = localStorage.getItem('dob2');
 
         // Check if the stored details are correct
-        if (!(name === "KALPANA" || name === "KALAPANA" || name === "RITESH") || dob1 !== "2000-09-06" || dob2 !== "2001-08-08") {
+        if (!(name === "KALPANA" || name === "KALAPANA" || name === "RITESH") ||
+            !(dob1 === "2000-10-06" || dob1 === "2001-10-06") ||
+            dob2 !== "2001-08-08") {
             // If the details are incorrect, redirect to index.html
             window.location.href = "index.html";
             alert("Enter login credentials");
