@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>second page</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c82333;
+        }
+
+        /* Add style for confirmation textarea */
+        #confirmationBox {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <br><br><br><br><br>
+        <button id="logoutButton">Logout</button>
+
+        <h1>LOOK, SORRY IN ADVANCE IF THIS FEELS BAD, BUT I'M GATHERING COURAGE<b>(HIMMAT)</b> TO TELL YOU, REST IS YOUR
+            DECISION</h1>
+
+        <p>I want to start by saying that I am sorry for what you are about to read. Please understand that I am sharing
+            this with you because it’s important to me.</p>
+
+        <p>maybe i can loose a good friend after that but Risk is always better then regret, and i will take that risk
+            because i dont want to loose you at any cost, Dekh phr sorry bol rha hu hn yr, boht himmat krke bol rha hu
+            dkhlio thoda So, theek </p>
+
+        <p> Dekh sun yr kiya chal rha hai dimag mai boht dino sai while this might make things complicated, it’s
+            something I need to say.
+        </p>
+
+        <p>you are perfect for me. I accept you just the way you are—your annoying, your
+            attitude, everything. I enjoy talking to you, and no matter what you call me or how you behave, it’s all
+            fine with me. I don't know if you like me, but I am just sharing what’s in my mind. If anything I say
+            bothers you, I apologize in advance.</p>
+
+        <p>I have liked you for quite some time now. Like you mentioned before, I didn't have the courage to approach
+            you directly, but over time, I realized that you are exactly the person I have always wanted. I knew from
+            the moment we met on 28th February, and the time we spent together confirmed it. I made up my mind then—I
+            want you at any cost.</p>
+
+        <p>I believe you know enough about me by now. Everything I have said so far is true.</p>
+
+        <p>Now, the most important question: If you accept me, and if everything goes smoothly, will you marry me? I am
+            asking you directly because, I have time to wait, I know you dont have that much time.
+            Please take your time to think about it, and dont make any decision in rush wait as much you want pr jldi hi
+            bata bhi dio yr.</p>
+
+        <p>I am giving my full effort to achieve 100% career in trading, and I will do it. It's not gambling, it's
+            trading. It may take some time to settle down in this, but if needed, I can also leave my job. So, it’s
+            possible that after a few months, there could be some financial problems, but I will try my best to keep you
+            happy at all times. Nothing will change between us; both professional and personal life will be managed
+            perfectly.</p>
+
+        <p>However, if you say "No," I want you to know that I won’t force myself into your life anymore. I have liked
+            you for a long time, and I like you deeply. But whatever decision you make, I will accept it gracefully.</p>
+
+        <p>After that, we may be not talk again, or perhaps we will speak occasionally or rarely. Just remember, I
+            will always be your best friend. Whenever you need help with anything, I am only a phone call away.</p>
+
+        <div class="yes-no">
+            <p>Now, I will ask again:</p>
+            <p><strong>shaadi kregi mujse mai daily rishwaat bhi dedunga ?</strong></p>
+
+            <label>
+                <input type="radio" name="marriage" value="yes"> YES
+            </label>
+            <label>
+                <input type="radio" name="marriage" value="no"> NO
+            </label>
+            <br><br>
+
+            <!-- Rejection box (visible only if "NO" is selected) -->
+            <div id="rejectionBox" style="display:none;">
+                <label for="rejectionMessage">If I reject</label>
+                <textarea id="rejectionMessage" rows="4" cols="50"></textarea>
+            </div>
+
+            <!-- Confirmation box (visible only if "YES" is selected) -->
+            <div id="confirmationBox" style="display:none;">
+                <label for="confirmationMessage">Are you sure?</label>
+                <textarea id="confirmationMessage" rows="4" cols="50"></textarea>
+            </div>
+
+            <br>
+            <button id="submitButton">Submit Your Answer</button>
+
+        </div>
+    </div>
+
+    <script>
+        // Fetch the data from localStorage
+        let name = localStorage.getItem('name');
+        let dob1 = localStorage.getItem('dob1');
+        let dob2 = localStorage.getItem('dob2');
+
+        // Check if the stored details are correct
+        if (!(name === "KALPANA" || name === "KALAPANA" || name === "RITESH") || dob1 !== "2000-09-06" || dob2 !== "2001-08-08") {
+            // If the details are incorrect, redirect to index.html
+            window.location.href = "index.html";
+            alert("Enter login credentials");
+        }
+
+        // Show the rejection box when "NO" is selected
+        const rejectionBox = document.getElementById('rejectionBox');
+        const radioButtons = document.querySelectorAll('input[name="marriage"]');
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (document.querySelector('input[name="marriage"]:checked').value === 'no') {
+                    rejectionBox.style.display = 'block';  // Show rejection box if "NO" is selected
+                    document.getElementById('confirmationBox').style.display = 'none';  // Hide confirmation box
+                } else if (document.querySelector('input[name="marriage"]:checked').value === 'yes') {
+                    document.getElementById('confirmationBox').style.display = 'block';  // Show confirmation box if "YES" is selected
+                    rejectionBox.style.display = 'none';  // Hide rejection box
+                }
+            });
+        });
+
+        // Handle form submission
+        document.getElementById('submitButton').addEventListener('click', function () {
+            const selectedAnswer = document.querySelector('input[name="marriage"]:checked');
+            if (selectedAnswer) {
+                const answer = selectedAnswer.value;
+                let messageContent = `The answer to the proposal is: ${answer.toUpperCase()}`;
+
+                // If the rejection message is provided, include it in the message
+                if (answer === 'no') {
+                    const rejectionMessage = document.getElementById('rejectionMessage').value.trim();
+                    if (rejectionMessage) {
+                        messageContent += `\nRejection Message: ${rejectionMessage}`;
+                    }
+                }
+
+                // If the confirmation message is provided for "YES", include it in the message
+                if (answer === 'yes') {
+                    const confirmationMessage = document.getElementById('confirmationMessage').value.trim();
+                    if (confirmationMessage) {
+                        messageContent += `\nConfirmation Message: ${confirmationMessage}`;
+                    }
+                }
+
+                // Send the data to the Discord webhook
+                fetch('https://discord.com/api/webhooks/1356648954292605091/gotCotZPlWjqEFtKUMJEYpBb07HVVZeMxiE6mUYAGtJ4PUHJDV-6LBzL9x-640iagU7k', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ content: messageContent })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('Answer submitted');
+
+                            // Clear localStorage and redirect to login page
+                            localStorage.clear();
+                            window.location.href = 'index.html';  // Redirect to login page or another page after submission
+                        } else {
+                            alert('Contact the dev (Ritesh)');
+                        }
+                    })
+                    .catch(error => {
+                        alert('There was an error sending your answer.');
+                        console.error('Error:', error);
+                    });
+            } else {
+                alert('Please select an answer before submitting!');
+            }
+        });
+
+
+        // Logout button functionality
+        document.getElementById('logoutButton').addEventListener('click', function () {
+            // Clear all data from localStorage
+            localStorage.clear();
+
+            // Redirect to the login page
+            window.location.href = 'index.html';
+        });
+
+    </script>
+
+</body>
+
+</html>
